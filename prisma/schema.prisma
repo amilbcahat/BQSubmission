@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model sampledata {
+  id      Int     @id @default(autoincrement())
+  ticker  String? @db.VarChar(10)
+  date    String? @db.VarChar(20)
+  revenue BigInt?
+  gp      BigInt?
+  fcf     BigInt?
+  capex   BigInt?
+}
